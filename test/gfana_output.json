@@ -1,0 +1,89 @@
+{
+  "annotations" : {
+    "list" : [ {
+      "builtIn" : 1,
+      "datasource" : "-- Grafana --",
+      "enable" : true,
+      "hide" : true,
+      "iconColor" : "rgba(0, 211, 255, 1)",
+      "name" : "Annotations & Alerts",
+      "type" : "dashboard"
+    } ]
+  },
+  "editable" : true,
+  "graphTooltip" : 0,
+  "panels" : [ {
+    "bars" : false,
+    "dashLength" : 10,
+    "dashes" : false,
+    "fill" : 1,
+    "fillGradient" : 0,
+    "gridPos" : {
+      "h" : 5,
+      "w" : 8,
+      "x" : 1,
+      "y" : 1
+    },
+    "hiddenSeries" : false,
+    "id" : 2,
+    "legend" : {
+      "avg" : false,
+      "current" : false,
+      "max" : false,
+      "min" : false,
+      "show" : true,
+      "total" : false,
+      "values" : false
+    },
+    "lines" : true,
+    "linewidth" : 1,
+    "nullPointMode" : "null",
+    "percentage" : false,
+    "pointradius" : 2,
+    "points" : false,
+    "renderer" : "flot",
+    "spaceLength" : 10,
+    "stack" : false,
+    "steppedLine" : false,
+    "targets" : [ {
+      "expr" : "servers_com_hootops_us_east_1_artifactory_app1_loadavg_01",
+      "refId" : "A"
+    } ],
+    "title" : "Cpu Load Average 1",
+    "tooltip" : {
+      "shared" : true,
+      "sort" : 0,
+      "value_type" : "individual"
+    },
+    "type" : "graph",
+    "xaxis" : {
+      "mode" : "time",
+      "show" : true
+    },
+    "yaxes" : [ {
+      "format" : "short",
+      "logBase" : 1,
+      "show" : true
+    }, {
+      "format" : "short",
+      "logBase" : 1,
+      "show" : true
+    } ],
+    "yaxis" : {
+      "align" : false
+    }
+  } ],
+  "schemaVersion" : 22,
+  "style" : "dark",
+  "time" : {
+    "from" : "now-6h",
+    "to" : "now"
+  },
+  "timepicker" : {
+    "refresh_intervals" : [ "5s", "10s", "30s", "1m", "5m", "15m", "30m", "1h", "2h", "1d" ]
+  },
+  "timezone" : "",
+  "title" : "Paul Hack2020 Test - Delete this after March2020",
+  "uid" : "7091863",
+  "version" : 1
+}
