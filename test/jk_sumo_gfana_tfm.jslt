@@ -1,0 +1,222 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "panels": [
+      {
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "hiddenSeries": false,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [
+            {
+                "alias": "pipeline_jenkins_jenkins_master_agent_master_stage_deploy_to_staging_duration_sum{env=\"production\",instance=\"service-statsite1.metrics.us-east-1.hootops.com:9102\",job=\"statsd\",relabeled=\"1\",service=\"jenkins-kubernetes\"}",
+                "dashes": .panels[0].properties.settings.metrics.configuration.blockSettings.A.lineType == "dash",
+                "color": if (.panels[0].properties.settings.metrics.configuration.blockSettings.A.colorFamily != "rainbow") .panels[0].properties.settings.metrics.configuration.blockSettings.A.colorFamily,
+            },
+            {
+                "alias": "sum(pipeline_jenkins_jenkins_master_agent_master_stage_deploy_to_staging_status_completedsuccess)",
+                "dashes": .panels[0].properties.settings.metrics.configuration.blockSettings.B.lineType == "dash",
+                "color": if (.panels[0].properties.settings.metrics.configuration.blockSettings.B.colorFamily != "rainbow") .panels[0].properties.settings.metrics.configuration.blockSettings.B.colorFamily,
+            }
+        ],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "pipeline_jenkins_jenkins_master_agent_master_stage_deploy_to_staging_duration_sum",
+            "refId": "A"
+          },
+          {
+            "expr": "sum(pipeline_jenkins_jenkins_master_agent_master_stage_deploy_to_staging_status_completedsuccess)",
+            "refId": "B"
+          },
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": .panels[0].name,
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "bars": false,
+        "colorBackground": .panels[2].properties.settings.metrics.configuration.singleValueSettings.useBackgroundColor,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "hiddenSeries": false,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "pipeline_jenkins_jenkins_master_agent_master_stage_deploy_to_staging_status_completedsuccess",
+            "refId": "A"
+          },
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": .panels[2].name,
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": if (.panels[2].properties.settings.metrics.configuration.global.chartType == "Single") "singlestat" else "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      }
+    ],
+    "schemaVersion": 22,
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ]
+    },
+    "title": .name,
+    "uid": .id,
+    "version": 1
+}

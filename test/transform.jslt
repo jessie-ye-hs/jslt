@@ -6,3 +6,7 @@ if (.foo.bar)
   }
 else
   "No array today"
+  
+{
+  "test": "Test"
+}

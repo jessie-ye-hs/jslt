@@ -1,0 +1,1956 @@
+{
+    "type": "DashboardSyncDefinition",
+    "name": "Jenkins Kubernetes Build Pipeline Dashboard",
+    "description": "",
+    "detailLevel": 0,
+    "properties": {
+        "layoutType": "gridster"
+    },
+    "panels": [
+        {
+            "name": "Jenkins on Kubernetes Pipeline Success Rate",
+            "viewerType": "metrics",
+            "detailLevel": 0,
+            "queryString": "",
+            "metricsQueries": [
+                {
+                    "query": "stats.counts.service.jenkins-kubernetes.pipeline.jenkins.jenkins-master-agent.master.stage.*.status.completederror.count | quantize 1d using sum | sum",
+                    "rowId": "A"
+                },
+                {
+                    "query": "stats.counts.service.jenkins-kubernetes.pipeline.jenkins.jenkins-master-agent.master.stage.push_jenkins_master_and_agent_latest.status.completedsuccess.count | quantize 1d using sum | sum ",
+                    "rowId": "B"
+                },
+                {
+                    "query": "stats.counts.service.jenkins-kubernetes.pipeline.jenkins.jenkins-master-agent.master.stage.deploy_to_staging.status.completedsuccess.count | quantize 1d using sum | sum",
+                    "rowId": "C"
+                }
+            ],
+            "timeRange": {
+                "type": "BeginBoundedTimeRange",
+                "from": {
+                    "type": "RelativeTimeRangeBoundary",
+                    "relativeTime": "-4w2d"
+                },
+                "to": null
+            },
+            "x": 1,
+            "y": 1,
+            "width": 12,
+            "height": 5,
+            "properties": {
+                "version": 3,
+                "settings": {
+                    "table": {
+                        "version": 2,
+                        "configuration": {
+                            "textTruncationMode": "none",
+                            "fontSize": "medium",
+                            "fontSizeOverride": null
+                        }
+                    },
+                    "bar": {
+                        "chartType": "bar",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "column": {
+                        "chartType": "column",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "line": {
+                        "chartType": "line",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "area": {
+                        "chartType": "area",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "pie": {
+                        "chartType": "pie",
+                        "version": 3,
+                        "configuration": {
+                            "donutMode": true,
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right"
+                            },
+                            "plotOptions": {
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "showSliceBorders": true,
+                                "maxNumOfPieSlices": "10"
+                            }
+                        }
+                    },
+                    "boxplot": {
+                        "chartType": "boxplot",
+                        "version": 1,
+                        "configuration": {
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                }
+                            },
+                            "yAxis": {
+                                "title": null,
+                                "min": null,
+                                "max": null
+                            }
+                        }
+                    },
+                    "map": {
+                        "chartType": "map",
+                        "version": 1,
+                        "configuration": {
+                            "maptype": "cluster"
+                        }
+                    },
+                    "svv": {
+                        "version": 2,
+                        "configuration": {
+                            "colorOverride": null,
+                            "backgroundColorEnabled": false,
+                            "noDataBehavior": {
+                                "enabled": false,
+                                "color": "#cccccc",
+                                "value": null,
+                                "isString": null
+                            },
+                            "valueType": {
+                                "number": {
+                                    "showNumber": true,
+                                    "unit": null,
+                                    "colorsByValueRange": null
+                                },
+                                "boolean": {
+                                    "trueColor": "#6aa84f",
+                                    "falseColor": "#cc0000"
+                                }
+                            },
+                            "labels": {
+                                "prefix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "left"
+                                },
+                                "postfix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "right"
+                                }
+                            }
+                        }
+                    },
+                    "sankey": {
+                        "version": 1,
+                        "configuration": {}
+                    },
+                    "text": {
+                        "version": 1,
+                        "configuration": {
+                            "text": null
+                        }
+                    },
+                    "metrics": {
+                        "version": 2,
+                        "configuration": {
+                            "blockSettings": {
+                                "A": {
+                                    "lineType": "solid",
+                                    "colorFamily": "rainbow",
+                                    "visible": true,
+                                    "customLabel": "Failures",
+                                    "interpolationMethod": "Fixed",
+                                    "interpolationFixedValue": "0"
+                                },
+                                "B": {
+                                    "colorFamily": "red",
+                                    "visible": true,
+                                    "customLabel": "Successes",
+                                    "lineType": "dash",
+                                    "interpolationMethod": "Fixed",
+                                    "interpolationFixedValue": "0"
+                                },
+                                "C": {
+                                    "visible": true,
+                                    "colorFamily": "lime",
+                                    "customLabel": "Staging Deploys",
+                                    "interpolationMethod": "Fixed",
+                                    "interpolationFixedValue": "0"
+                                }
+                            },
+                            "viewType": "timeline",
+                            "zoom": "xy",
+                            "yAxis": {
+                                "custom": [
+                                    {},
+                                    {}
+                                ]
+                            },
+                            "xAxis": {
+                                "scrubber": true
+                            },
+                            "outliers": {
+                                "enabled": true,
+                                "top": 1,
+                                "scope": "Chart",
+                                "cyclicality": false,
+                                "threshold": 7,
+                                "autoShowBand": true
+                            },
+                            "colorFamily": "METRIC_DEFAULT",
+                            "global": {
+                                "chartType": "Line",
+                                "stacking": "None",
+                                "lineWidth": "2",
+                                "colorFamily": "rainbow"
+                            },
+                            "logOverlay": {},
+                            "singleValueSettings": {
+                                "visualization": {
+                                    "kind": "Color"
+                                },
+                                "thresholdRed": [
+                                    null,
+                                    null
+                                ],
+                                "hideData": false,
+                                "roundingType": "SHORTEN",
+                                "useBackgroundColor": false,
+                                "useNoData": false,
+                                "label": "",
+                                "option": "Average",
+                                "thresholdGreen": [
+                                    null,
+                                    null
+                                ],
+                                "noDataString": "",
+                                "thresholdYellow": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            "series": {
+                                "custom": {
+                                    "A_metric=sum(count)": {
+                                        "color": "#E1350B"
+                                    },
+                                    "B_metric=sum(count)": {
+                                        "color": "#63AA1A"
+                                    },
+                                    "C_metric=sum(count)": {
+                                        "color": "#226dbb"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "common": {
+                        "version": 1,
+                        "configuration": {
+                            "drilldown": {
+                                "fallback": {
+                                    "target": {
+                                        "id": null,
+                                        "name": null,
+                                        "enabled": null
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "id": "5570662",
+            "desiredQuantizationInSecs": 0,
+            "queryParameters": []
+        },
+        {
+            "name": "Jenkins on Kubernetes Pipeline Duration",
+            "viewerType": "metrics",
+            "detailLevel": 0,
+            "queryString": "",
+            "metricsQueries": [
+                {
+                    "query": "stats.timers.service.jenkins-kubernetes.pipeline.jenkins.jenkins-master-agent.master.job.duration.mean | eval(_value / (1000 * 60))",
+                    "rowId": "A"
+                },
+                {
+                    "query": "stats.timers.service.jenkins-kubernetes.pipeline.jenkins.jenkins-master-agent.master.job.duration.mean",
+                    "rowId": "B"
+                }
+            ],
+            "timeRange": {
+                "type": "BeginBoundedTimeRange",
+                "from": {
+                    "type": "RelativeTimeRangeBoundary",
+                    "relativeTime": "-4w2d"
+                },
+                "to": null
+            },
+            "x": 13,
+            "y": 1,
+            "width": 12,
+            "height": 5,
+            "properties": {
+                "version": 3,
+                "settings": {
+                    "metrics": {
+                        "version": 2,
+                        "configuration": {
+                            "global": {
+                                "chartType": "Line"
+                            },
+                            "colorFamily": "METRIC_DEFAULT",
+                            "logOverlay": {},
+                            "singleValueSettings": {
+                                "visualization": {
+                                    "kind": "Color"
+                                },
+                                "thresholdRed": [
+                                    null,
+                                    null
+                                ],
+                                "hideData": false,
+                                "roundingType": "SHORTEN",
+                                "useBackgroundColor": false,
+                                "useNoData": false,
+                                "label": "",
+                                "option": "Average",
+                                "thresholdGreen": [
+                                    null,
+                                    null
+                                ],
+                                "noDataString": "",
+                                "thresholdYellow": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            "blockSettings": {
+                                "A": {
+                                    "visible": true,
+                                    "colorFamily": "fiji",
+                                    "lineType": "solid",
+                                    "customLabel": "Duration"
+                                },
+                                "B": {
+                                    "visible": false
+                                }
+                            },
+                            "zoom": "xy",
+                            "series": {
+                                "custom": {
+                                    "A_metric=mean": {
+                                        "visible": true
+                                    }
+                                }
+                            },
+                            "yAxis": {
+                                "custom": [
+                                    {
+                                        "name": "Minutes"
+                                    },
+                                    {}
+                                ]
+                            },
+                            "outliers": {
+                                "enabled": false,
+                                "top": 1,
+                                "scope": "Chart",
+                                "cyclicality": false,
+                                "threshold": 7,
+                                "autoShowBand": true
+                            }
+                        }
+                    },
+                    "common": {
+                        "version": 1,
+                        "configuration": {
+                            "drilldown": {
+                                "fallback": {
+                                    "target": {
+                                        "id": null,
+                                        "name": null,
+                                        "enabled": null
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "boxplot": {
+                        "chartType": "boxplot",
+                        "version": 1,
+                        "configuration": {
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                }
+                            },
+                            "yAxis": {
+                                "title": null,
+                                "min": null,
+                                "max": null
+                            }
+                        }
+                    },
+                    "pie": {
+                        "chartType": "pie",
+                        "version": 3,
+                        "configuration": {
+                            "donutMode": true,
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right"
+                            },
+                            "plotOptions": {
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "showSliceBorders": true,
+                                "maxNumOfPieSlices": "10"
+                            }
+                        }
+                    },
+                    "area": {
+                        "chartType": "area",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "text": {
+                        "version": 1,
+                        "configuration": {
+                            "text": null
+                        }
+                    },
+                    "table": {
+                        "version": 2,
+                        "configuration": {
+                            "textTruncationMode": "none",
+                            "fontSize": "medium",
+                            "fontSizeOverride": null
+                        }
+                    },
+                    "bar": {
+                        "chartType": "bar",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "svv": {
+                        "version": 2,
+                        "configuration": {
+                            "colorOverride": null,
+                            "backgroundColorEnabled": false,
+                            "noDataBehavior": {
+                                "enabled": false,
+                                "color": "#cccccc",
+                                "value": null,
+                                "isString": null
+                            },
+                            "valueType": {
+                                "number": {
+                                    "showNumber": true,
+                                    "unit": null,
+                                    "colorsByValueRange": null
+                                },
+                                "boolean": {
+                                    "trueColor": "#6aa84f",
+                                    "falseColor": "#cc0000"
+                                }
+                            },
+                            "labels": {
+                                "prefix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "left"
+                                },
+                                "postfix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "right"
+                                }
+                            }
+                        }
+                    },
+                    "line": {
+                        "chartType": "line",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "column": {
+                        "chartType": "column",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "map": {
+                        "chartType": "map",
+                        "version": 1,
+                        "configuration": {
+                            "maptype": "cluster"
+                        }
+                    },
+                    "sankey": {
+                        "version": 1,
+                        "configuration": {}
+                    }
+                }
+            },
+            "id": "5570660",
+            "desiredQuantizationInSecs": 0,
+            "queryParameters": []
+        },
+        {
+            "name": "Successful Deploys to JK Staging",
+            "viewerType": "metrics",
+            "detailLevel": 0,
+            "queryString": "",
+            "metricsQueries": [
+                {
+                    "query": "stats.counts.service.jenkins-kubernetes.pipeline.jenkins.jenkins-master-agent.master.stage.deploy_to_staging.status.completedsuccess.count | count",
+                    "rowId": "A"
+                }
+            ],
+            "timeRange": {
+                "type": "BeginBoundedTimeRange",
+                "from": {
+                    "type": "RelativeTimeRangeBoundary",
+                    "relativeTime": "-4w2d"
+                },
+                "to": null
+            },
+            "x": 1,
+            "y": 6,
+            "width": 6,
+            "height": 5,
+            "properties": {
+                "version": 3,
+                "settings": {
+                    "metrics": {
+                        "version": 2,
+                        "configuration": {
+                            "global": {
+                                "chartType": "Single"
+                            },
+                            "colorFamily": "METRIC_DEFAULT",
+                            "logOverlay": {},
+                            "singleValueSettings": {
+                                "visualization": {
+                                    "kind": "Color"
+                                },
+                                "thresholdRed": [
+                                    null,
+                                    null
+                                ],
+                                "hideData": false,
+                                "roundingType": "SHORTEN",
+                                "useBackgroundColor": false,
+                                "useNoData": true,
+                                "label": "Successful Deploys to Staging",
+                                "option": "Sum",
+                                "thresholdGreen": [
+                                    null,
+                                    null
+                                ],
+                                "noDataString": "0",
+                                "thresholdYellow": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            "legendSettings": {
+                                "columns": [
+                                    {
+                                        "title": "LABEL",
+                                        "visible": true,
+                                        "$$hashKey": "object:34804"
+                                    },
+                                    {
+                                        "title": "Avg",
+                                        "visible": false,
+                                        "$$hashKey": "object:34805"
+                                    },
+                                    {
+                                        "title": "Min",
+                                        "visible": false,
+                                        "$$hashKey": "object:34806"
+                                    },
+                                    {
+                                        "title": "Max",
+                                        "visible": false,
+                                        "$$hashKey": "object:34807"
+                                    },
+                                    {
+                                        "title": "metric",
+                                        "visible": true,
+                                        "$$hashKey": "object:34808"
+                                    }
+                                ]
+                            },
+                            "blockSettings": {
+                                "A": {
+                                    "visible": true
+                                }
+                            },
+                            "zoom": "xy",
+                            "series": {
+                                "custom": {},
+                                "visible": false
+                            },
+                            "yAxis": {
+                                "custom": [
+                                    {},
+                                    {}
+                                ]
+                            },
+                            "outliers": {
+                                "enabled": true,
+                                "top": 1,
+                                "scope": "Chart",
+                                "cyclicality": false,
+                                "threshold": 7,
+                                "autoShowBand": true
+                            }
+                        }
+                    },
+                    "common": {
+                        "version": 1,
+                        "configuration": {
+                            "drilldown": {
+                                "fallback": {
+                                    "target": {
+                                        "id": null,
+                                        "name": null,
+                                        "enabled": null
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "boxplot": {
+                        "chartType": "boxplot",
+                        "version": 1,
+                        "configuration": {
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                }
+                            },
+                            "yAxis": {
+                                "title": null,
+                                "min": null,
+                                "max": null
+                            }
+                        }
+                    },
+                    "pie": {
+                        "chartType": "pie",
+                        "version": 3,
+                        "configuration": {
+                            "donutMode": true,
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right"
+                            },
+                            "plotOptions": {
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "showSliceBorders": true,
+                                "maxNumOfPieSlices": "10"
+                            }
+                        }
+                    },
+                    "area": {
+                        "chartType": "area",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "text": {
+                        "version": 1,
+                        "configuration": {
+                            "text": null
+                        }
+                    },
+                    "table": {
+                        "version": 2,
+                        "configuration": {
+                            "textTruncationMode": "none",
+                            "fontSize": "medium",
+                            "fontSizeOverride": null
+                        }
+                    },
+                    "bar": {
+                        "chartType": "bar",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "svv": {
+                        "version": 2,
+                        "configuration": {
+                            "colorOverride": null,
+                            "backgroundColorEnabled": false,
+                            "noDataBehavior": {
+                                "enabled": false,
+                                "color": "#cccccc",
+                                "value": null,
+                                "isString": null
+                            },
+                            "valueType": {
+                                "number": {
+                                    "showNumber": true,
+                                    "unit": null,
+                                    "colorsByValueRange": null
+                                },
+                                "boolean": {
+                                    "trueColor": "#6aa84f",
+                                    "falseColor": "#cc0000"
+                                }
+                            },
+                            "labels": {
+                                "prefix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "left"
+                                },
+                                "postfix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "right"
+                                }
+                            }
+                        }
+                    },
+                    "line": {
+                        "chartType": "line",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "column": {
+                        "chartType": "column",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "map": {
+                        "chartType": "map",
+                        "version": 1,
+                        "configuration": {
+                            "maptype": "cluster"
+                        }
+                    },
+                    "sankey": {
+                        "version": 1,
+                        "configuration": {}
+                    }
+                }
+            },
+            "id": "5570666",
+            "desiredQuantizationInSecs": 0,
+            "queryParameters": []
+        },
+        {
+            "name": "Failed Builds",
+            "viewerType": "metrics",
+            "detailLevel": 0,
+            "queryString": "",
+            "metricsQueries": [
+                {
+                    "query": "stats.counts.service.jenkins-kubernetes.pipeline.jenkins.jenkins-master-agent.master.stage.*.status.completederror.count | sum",
+                    "rowId": "A"
+                }
+            ],
+            "timeRange": {
+                "type": "BeginBoundedTimeRange",
+                "from": {
+                    "type": "RelativeTimeRangeBoundary",
+                    "relativeTime": "-4w2d"
+                },
+                "to": null
+            },
+            "x": 19,
+            "y": 6,
+            "width": 6,
+            "height": 5,
+            "properties": {
+                "version": 3,
+                "settings": {
+                    "metrics": {
+                        "version": 2,
+                        "configuration": {
+                            "global": {
+                                "chartType": "Single"
+                            },
+                            "colorFamily": "METRIC_DEFAULT",
+                            "logOverlay": {},
+                            "singleValueSettings": {
+                                "visualization": {
+                                    "kind": "Color"
+                                },
+                                "thresholdRed": [
+                                    null,
+                                    null
+                                ],
+                                "hideData": false,
+                                "roundingType": "SHORTEN",
+                                "useBackgroundColor": false,
+                                "useNoData": true,
+                                "label": "Failed Builds",
+                                "option": "Sum",
+                                "thresholdGreen": [
+                                    null,
+                                    null
+                                ],
+                                "noDataString": "0",
+                                "thresholdYellow": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            "blockSettings": {},
+                            "zoom": "xy",
+                            "series": {
+                                "custom": {}
+                            },
+                            "yAxis": {
+                                "custom": [
+                                    {},
+                                    {}
+                                ]
+                            },
+                            "outliers": {
+                                "enabled": true,
+                                "top": 1,
+                                "scope": "Chart",
+                                "cyclicality": false,
+                                "threshold": 7,
+                                "autoShowBand": true
+                            }
+                        }
+                    },
+                    "common": {
+                        "version": 1,
+                        "configuration": {
+                            "drilldown": {
+                                "fallback": {
+                                    "target": {
+                                        "id": null,
+                                        "name": null,
+                                        "enabled": null
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "boxplot": {
+                        "chartType": "boxplot",
+                        "version": 1,
+                        "configuration": {
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                }
+                            },
+                            "yAxis": {
+                                "title": null,
+                                "min": null,
+                                "max": null
+                            }
+                        }
+                    },
+                    "pie": {
+                        "chartType": "pie",
+                        "version": 3,
+                        "configuration": {
+                            "donutMode": true,
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right"
+                            },
+                            "plotOptions": {
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "showSliceBorders": true,
+                                "maxNumOfPieSlices": "10"
+                            }
+                        }
+                    },
+                    "area": {
+                        "chartType": "area",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "text": {
+                        "version": 1,
+                        "configuration": {
+                            "text": null
+                        }
+                    },
+                    "table": {
+                        "version": 2,
+                        "configuration": {
+                            "textTruncationMode": "none",
+                            "fontSize": "medium",
+                            "fontSizeOverride": null
+                        }
+                    },
+                    "bar": {
+                        "chartType": "bar",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "svv": {
+                        "version": 2,
+                        "configuration": {
+                            "colorOverride": null,
+                            "backgroundColorEnabled": false,
+                            "noDataBehavior": {
+                                "enabled": false,
+                                "color": "#cccccc",
+                                "value": null,
+                                "isString": null
+                            },
+                            "valueType": {
+                                "number": {
+                                    "showNumber": true,
+                                    "unit": null,
+                                    "colorsByValueRange": null
+                                },
+                                "boolean": {
+                                    "trueColor": "#6aa84f",
+                                    "falseColor": "#cc0000"
+                                }
+                            },
+                            "labels": {
+                                "prefix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "left"
+                                },
+                                "postfix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "right"
+                                }
+                            }
+                        }
+                    },
+                    "line": {
+                        "chartType": "line",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "column": {
+                        "chartType": "column",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "map": {
+                        "chartType": "map",
+                        "version": 1,
+                        "configuration": {
+                            "maptype": "cluster"
+                        }
+                    },
+                    "sankey": {
+                        "version": 1,
+                        "configuration": {}
+                    }
+                }
+            },
+            "id": "5570661",
+            "desiredQuantizationInSecs": 0,
+            "queryParameters": []
+        },
+        {
+            "name": "Median Jenkins on Kubernetes Pipeline Duration",
+            "viewerType": "metrics",
+            "detailLevel": 0,
+            "queryString": "",
+            "metricsQueries": [
+                {
+                    "query": "stats.timers.service.jenkins-kubernetes.pipeline.jenkins.jenkins-master-agent.master.stage.*.duration.median | eval(_value / (1000 * 60))",
+                    "rowId": "A"
+                }
+            ],
+            "timeRange": {
+                "type": "BeginBoundedTimeRange",
+                "from": {
+                    "type": "RelativeTimeRangeBoundary",
+                    "relativeTime": "-4w2d"
+                },
+                "to": null
+            },
+            "x": 7,
+            "y": 6,
+            "width": 12,
+            "height": 5,
+            "properties": {
+                "version": 3,
+                "settings": {
+                    "table": {
+                        "version": 2,
+                        "configuration": {
+                            "textTruncationMode": "none",
+                            "fontSize": "medium",
+                            "fontSizeOverride": null
+                        }
+                    },
+                    "bar": {
+                        "chartType": "bar",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "column": {
+                        "chartType": "column",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "line": {
+                        "chartType": "line",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "area": {
+                        "chartType": "area",
+                        "version": 2,
+                        "configuration": {
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right",
+                                "dimensions": {
+                                    "width": null,
+                                    "height": null
+                                }
+                            },
+                            "plotOptions": {
+                                "stacking": null,
+                                "lineToArea": false
+                            },
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "minorTickInterval": null
+                            },
+                            "yAxis": [
+                                {
+                                    "title": null,
+                                    "logScale": false,
+                                    "min": null,
+                                    "max": null,
+                                    "bands": null,
+                                    "minorTickInterval": null
+                                }
+                            ],
+                            "seriesInfo": {},
+                            "showLineMarker": true,
+                            "lineMouseTracking": true
+                        }
+                    },
+                    "pie": {
+                        "chartType": "pie",
+                        "version": 3,
+                        "configuration": {
+                            "donutMode": true,
+                            "colors": {
+                                "index": null,
+                                "overrides": null
+                            },
+                            "legend": {
+                                "enabled": true,
+                                "position": "right"
+                            },
+                            "plotOptions": {
+                                "label": {
+                                    "truncationMode": "middle"
+                                },
+                                "showSliceBorders": true,
+                                "maxNumOfPieSlices": "10"
+                            }
+                        }
+                    },
+                    "boxplot": {
+                        "chartType": "boxplot",
+                        "version": 1,
+                        "configuration": {
+                            "xAxis": {
+                                "title": null,
+                                "label": {
+                                    "truncationMode": "middle"
+                                }
+                            },
+                            "yAxis": {
+                                "title": null,
+                                "min": null,
+                                "max": null
+                            }
+                        }
+                    },
+                    "map": {
+                        "chartType": "map",
+                        "version": 1,
+                        "configuration": {
+                            "maptype": "cluster"
+                        }
+                    },
+                    "svv": {
+                        "version": 2,
+                        "configuration": {
+                            "colorOverride": null,
+                            "backgroundColorEnabled": false,
+                            "noDataBehavior": {
+                                "enabled": false,
+                                "color": "#cccccc",
+                                "value": null,
+                                "isString": null
+                            },
+                            "valueType": {
+                                "number": {
+                                    "showNumber": true,
+                                    "unit": null,
+                                    "colorsByValueRange": null
+                                },
+                                "boolean": {
+                                    "trueColor": "#6aa84f",
+                                    "falseColor": "#cc0000"
+                                }
+                            },
+                            "labels": {
+                                "prefix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "left"
+                                },
+                                "postfix": {
+                                    "enabled": false,
+                                    "text": "",
+                                    "align": "right"
+                                }
+                            }
+                        }
+                    },
+                    "sankey": {
+                        "version": 1,
+                        "configuration": {}
+                    },
+                    "text": {
+                        "version": 1,
+                        "configuration": {
+                            "text": null
+                        }
+                    },
+                    "metrics": {
+                        "version": 2,
+                        "configuration": {
+                            "blockSettings": {},
+                            "viewType": "timeline",
+                            "zoom": "xy",
+                            "yAxis": {
+                                "custom": [
+                                    {
+                                        "name": "Minutes"
+                                    },
+                                    {}
+                                ]
+                            },
+                            "xAxis": {
+                                "scrubber": true
+                            },
+                            "outliers": {
+                                "enabled": false,
+                                "top": 1,
+                                "scope": "Chart",
+                                "cyclicality": false,
+                                "threshold": 7,
+                                "autoShowBand": true
+                            },
+                            "colorFamily": "METRIC_DEFAULT",
+                            "global": {
+                                "chartType": "Area"
+                            },
+                            "logOverlay": {},
+                            "singleValueSettings": {
+                                "visualization": {
+                                    "kind": "Color"
+                                },
+                                "thresholdRed": [
+                                    null,
+                                    null
+                                ],
+                                "hideData": false,
+                                "roundingType": "SHORTEN",
+                                "useBackgroundColor": false,
+                                "useNoData": false,
+                                "label": "",
+                                "option": "Average",
+                                "thresholdGreen": [
+                                    null,
+                                    null
+                                ],
+                                "noDataString": "",
+                                "thresholdYellow": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            "series": {
+                                "custom": {}
+                            }
+                        }
+                    },
+                    "common": {
+                        "version": 1,
+                        "configuration": {
+                            "drilldown": {
+                                "fallback": {
+                                    "target": {
+                                        "id": null,
+                                        "name": null,
+                                        "enabled": null
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "id": "5985763",
+            "desiredQuantizationInSecs": 0,
+            "queryParameters": []
+        }
+    ],
+    "filters": []
+}
